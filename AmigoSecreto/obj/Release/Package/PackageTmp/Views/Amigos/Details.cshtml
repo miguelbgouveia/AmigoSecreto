@@ -1,0 +1,58 @@
+﻿@model AmigoSecreto.Models.Amigo
+
+@{
+    ViewBag.Title = "Detalhos";
+}
+
+<h2>Detalhos</h2>
+
+<div>
+    <h4>Amigo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NTelemovel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NTelemovel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimoEnvioSMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UltimoEnvioSMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultadoUltimoEnvioSMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultadoUltimoEnvioSMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StringImpedimentos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StringImpedimentos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Aditar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar à Lista", "Index")
+</p>

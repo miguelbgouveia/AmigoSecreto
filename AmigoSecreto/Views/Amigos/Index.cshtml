@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AmigoSecreto.Models.Amigo>
+
+@{
+    ViewBag.Title = "Lista de Amigos";
+}
+
+<h2>Lista de Amigos</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NTelemovel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UltimoEnvioSMS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoUltimoEnvioSMS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NTelemovel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UltimoEnvioSMS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ResultadoUltimoEnvioSMS)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Detalhos", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>
+<p>@Html.ActionLink("Testar Sorteio", "TestarSorteio")</p>
+<p>@Html.ActionLink("Testar Envios SMS", "TestarEnvioSMS")</p>
+<p>@Html.ActionLink("Sortear Amigo Secreto", "SortearAmigos")</p>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AmigoSecreto.Models.Impedimento>
+
+@{
+    ViewBag.Title = "Lista de Impedimentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Impedimentos</h2>
+
+<p>
+    @Html.ActionLink("Criar Impedimento", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Amigo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeLike)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amigo.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeLike)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalhos", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

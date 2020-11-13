@@ -1,0 +1,34 @@
+﻿@model AmigoSecreto.Models.Impedimento
+
+@{
+    ViewBag.Title = "Detalhos do Impedimento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhos do Impedimento</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Amigo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amigo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeLike)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeLike)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar à Lista", "Index")
+</p>

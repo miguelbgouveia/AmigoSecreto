@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "TestarEnvioSMS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tem a certeza que quer Testar Envio SMS</h2>
+
+@using (Html.BeginForm(("Amigos", "TestarEnvioSMSConfirmado")))
+{
+    <div class="form-actions no-color">
+        <input type="submit" value="Testar Envio SMS" class="btn btn-success" />
+        <a href="@Url.Action("Index", "Amigos")" class="btn btn-default"> Cancelar</a>
+    </div>
+}
